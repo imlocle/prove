@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { Route } from 'react-router';
+import React from 'react';
+import { Route } from 'react-router-dom';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { CheckingQForm } from './components/OfficeManager/CheckingQForm'
@@ -9,10 +9,7 @@ import { SupplyTable } from './components/Nurse/SupplyTable'
 
 import './custom.css'
 
-export default class App extends Component {
-  static displayName = "Southwest Urgent Care";
-
-  render () {
+export default function App() {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
@@ -22,5 +19,4 @@ export default class App extends Component {
         <Route path='/supplytable' component={SupplyTable} />
       </Layout>
     );
-  }
 }
