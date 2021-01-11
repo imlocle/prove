@@ -7,5 +7,5 @@
 * `npm install --save`
 * `npm install --save react`
 * `npm install --save react-alert`
-* `npm install --save react-alert react-alert-template-basic`
+* `npm install --save react-alert-template-basic`
 * `npm install --save react-hook-form`
