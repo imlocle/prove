@@ -35,5 +35,36 @@ namespace prove.Controllers
             // Then Save to db with matching tables and columns with models
             return data;
         }
+        [HttpGet]
+        [Route("getAllCurrentPatients")]
+        public List<Patient> GetAllCurrentPatients()
+        {
+            var allPatients = new List<Patient>();
+            // dummy data
+            var p1 = new Patient
+            {
+                Id = 1,
+                FirstName = "Richard",
+                LastName = "Grayson"
+            };
+            var p2 = new Patient
+            {
+                Id = 2,
+                FirstName = "Wally",
+                LastName = "West"
+            };
+            var p3 = new Patient
+            {
+                Id = 3,
+                FirstName = "Roy",
+                LastName = "Harper"
+            };
+
+            allPatients.Add(p1);
+            allPatients.Add(p2);
+            allPatients.Add(p3);
+
+            return allPatients;
+        }
     }
 }

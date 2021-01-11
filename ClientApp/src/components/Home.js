@@ -7,6 +7,7 @@ export class Home extends Component {
   render () {
     return (
       <div>
+        <Link to='/login'><button>Login</button></Link>
         <Link to="/checkingqform"><button>Patient Form</button></Link>
         <Link to="/nurseqform"><button>Nurse Form</button></Link>
       </div>

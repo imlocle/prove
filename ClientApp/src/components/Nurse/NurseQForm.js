@@ -1,12 +1,14 @@
 import React from 'react';
 import { useAlert } from 'react-alert';
 import { useForm } from 'react-hook-form';
+import { Redirect } from 'react-router-dom';
 import { postReqJsonData } from '../../helper';
 
 import '../Form.css'
 
 export const NurseQForm = () => {
 
+    const [redirectToReferrer, setRedirectToReferrer ] = React.useState(false)
     const { register, handleSubmit } = useForm();
     const alert = useAlert()
 
@@ -19,6 +21,11 @@ export const NurseQForm = () => {
         // log for testing
         console.log(data)
         postReqJsonData('patient/patientNurseQData', data);
+        setRedirectToReferrer(true)
+    }
+
+    if (redirectToReferrer === true){
+        return <Redirect to={'/'}/>
     }
 
     return (

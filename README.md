@@ -9,9 +9,3 @@
 * `npm install --save react-alert`
 * `npm install --save react-alert-template-basic`
 * `npm install --save react-hook-form`
-
-
-### To Do
-* Add login
-* Calculate capacity
-* Patients can't see Clinic Info and supplies

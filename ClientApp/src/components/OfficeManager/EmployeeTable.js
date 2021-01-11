@@ -12,6 +12,7 @@ export class EmployeeTable extends Component {
 
     componentDidMount() {
         this.populateEmployeeData();
+        this.populateCurrentPatientData();
     }
 
     static renderEmployeeTable (employee) {
@@ -29,7 +30,7 @@ export class EmployeeTable extends Component {
                     <tr key={index}>
                     <td>{employee.firstName}</td>
                     <td>{employee.lastName}</td>
-                    <td>{employee.employeeTypeId == '1' ? "Physician" : "CNA"}</td>
+                    <td>{employee.employeeTypeId === '1' ? "Physician" : "CNA"}</td>
                     </tr>
                 )}
                 </tbody>
@@ -54,13 +55,19 @@ export class EmployeeTable extends Component {
         )
     }
 
+    async populateCurrentPatientData(){
+        const patientResponse = await fetch('patient/getAllCurrentPatients')
+        const patientData = await patientResponse.json()
+        this.setState({
+            patientCount: patientData.length
+        })
+    }
+
     async populateEmployeeData() {
         const employeeResponse = await fetch('employee');
         const employeeData = await employeeResponse.json()
-        const patientCount = Math.floor(Math.random() * 100)
         this.setState({
             employees: employeeData,
-            patientCount: patientCount,
             loading: false
         })
     }
