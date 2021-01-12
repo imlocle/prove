@@ -46,7 +46,7 @@ export const NurseQForm = () => {
                     <input className='field-long' type='illness' name='illness' ref={register}></input>
                 </li>
                 <li>
-                    <label>Potential Plater Cast Needed <span className="required">*</span></label>
+                    <label>Potential Plaster Cast Needed <span className="required">*</span></label>
                     <input type="radio" name="cast" value="yes" ref={register}/> Yes 
                     <input type="radio" name="cast" value="no" ref={register}/> No
                     <label>If so, we offer cartoon characters and/or sport logos printed on the plaster cast.</label>
