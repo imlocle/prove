@@ -12,4 +12,12 @@ namespace prove.Models
         public DateTime CreateDate {get;set;}
         public DateTime Modified {get;set;}
     }
+
+    public class EmployeeView
+    {
+        public string FirstName {get; set;}
+        public string LastName {get; set;}
+        public string EmployeeType {get; set;}
+        
+    }
 }

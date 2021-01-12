@@ -47,6 +47,7 @@ export class SupplyTable extends Component {
         )
     }
 
+    // Fetching supply data from api
     async populateSupplyData() {
         const supplyResponse = await fetch('supply');
         const supplyData = await supplyResponse.json()

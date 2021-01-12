@@ -14,21 +14,19 @@ namespace prove.Controllers
     public class EmployeeController : ControllerBase
     {
         [HttpGet]
-        public List<Employee> GetAll()
+        public List<EmployeeView> GetAll()
         {
-            var listEmployees = new List<Employee>();
+            var listEmployees = new List<EmployeeView>();
             // example data
-            var emp1 = new Employee(){
-                Id = 1,
+            var emp1 = new EmployeeView(){
                 FirstName = "Lois",
                 LastName = "Griffin",
-                EmployeeTypeId = 1,
+                EmployeeType = "Physician",
             };
-            var emp2 = new Employee(){
-                Id = 2,
+            var emp2 = new EmployeeView(){
                 FirstName = "Frank",
                 LastName = "Murphy",
-                EmployeeTypeId = 24,
+                EmployeeType = "CNA",
             };
 
             listEmployees.Add(emp1);

@@ -30,7 +30,7 @@ export class EmployeeTable extends Component {
                     <tr key={index}>
                     <td>{employee.firstName}</td>
                     <td>{employee.lastName}</td>
-                    <td>{employee.employeeTypeId === '1' ? "Physician" : "CNA"}</td>
+                    <td>{employee.employeeType}</td>
                     </tr>
                 )}
                 </tbody>
@@ -55,6 +55,7 @@ export class EmployeeTable extends Component {
         )
     }
 
+    // Fetching current patient data from api
     async populateCurrentPatientData(){
         const patientResponse = await fetch('patient/getAllCurrentPatients')
         const patientData = await patientResponse.json()
@@ -63,6 +64,7 @@ export class EmployeeTable extends Component {
         })
     }
 
+    // Fetching employee data from api
     async populateEmployeeData() {
         const employeeResponse = await fetch('employee');
         const employeeData = await employeeResponse.json()

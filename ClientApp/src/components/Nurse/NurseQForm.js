@@ -6,12 +6,14 @@ import { postReqJsonData } from '../../helper';
 
 import '../Form.css'
 
+// Nurse question form
 export const NurseQForm = () => {
 
     const [redirectToReferrer, setRedirectToReferrer ] = React.useState(false)
     const { register, handleSubmit } = useForm();
     const alert = useAlert()
 
+    // Submiting answers to api
     const onSubmit = (data) => {
         let date = new Date(Date.now());
         // dummy data
@@ -24,6 +26,7 @@ export const NurseQForm = () => {
         setRedirectToReferrer(true)
     }
 
+    // After submit, redirect page to home
     if (redirectToReferrer === true){
         return <Redirect to={'/'}/>
     }

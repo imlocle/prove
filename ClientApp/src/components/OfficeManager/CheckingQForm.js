@@ -5,6 +5,7 @@ import { useAlert } from 'react-alert'
 import { useForm } from "react-hook-form";
 import '../Form.css'
 
+// Front Office checking in question form
 export const CheckingQForm = () => {
 
     const [redirectToReferrer, setRedirectToReferrer] = React.useState(false)
@@ -14,6 +15,7 @@ export const CheckingQForm = () => {
     let covidAlert = false;
     let emergencyAlert = false;
 
+    // Submiting answers to api
     const onSubmit = (data) => {
         let date = new Date(Date.now());
         // dummy data
@@ -26,6 +28,7 @@ export const CheckingQForm = () => {
         setRedirectToReferrer(true)
     }
 
+    // After submit, redirect page to home
     if (redirectToReferrer === true){
         return <Redirect to={'/'}/>
     }
@@ -46,6 +49,17 @@ export const CheckingQForm = () => {
                     <input className='field-long' type='date' name='dateOfBirth' ref={register}></input>
                 </li>
                 <li>
+                    <label>COVID-19 <span className="required">*</span></label>
+                    <p>Do you have COVID-19 or have been in contact with someone with it?</p>
+                    <p>If so, please go to the <a href={hospLink} target="_blank" rel="noopener noreferrer">East Entrance</a> for COVID-19 protocol.</p>
+                    <input type="radio" name="covid19" value="yes" ref={register} onClick={()=>{covidAlert=true}}/> Yes
+                    <input type="radio" name="covid19" value="no" ref={register} onClick={()=>{covidAlert=false}}/> No
+                </li>
+                <li>
+                    <label>Illness or Injury <span className="required">*</span></label>
+                    <input type='text' name="illness" id="field5" className="field-long" ref={register}/>
+                </li>
+                <li>
                     <label>Severity Level <span className="required">*</span></label>
                     <p>If this is an Emergency, please go to the ER.</p>
                     <select name="severityLevel" className="field-select" ref={register} onChange={(x)=>{
@@ -62,17 +76,6 @@ export const CheckingQForm = () => {
                         <option value="4">4 (Illness)</option>
                         <option value="5">5 (Emergency)</option>
                     </select>
-                </li>
-                <li>
-                    <label>COVID-19 <span className="required">*</span></label>
-                    <p>Do you have COVID-19 or have been in contact with someone with it?</p>
-                    <p>If so, please go to the <a href={hospLink} target="_blank" rel="noopener noreferrer">East Entrance</a> for COVID-19 protocol.</p>
-                    <input type="radio" name="covid19" value="yes" ref={register} onClick={()=>{covidAlert=true}}/> Yes
-                    <input type="radio" name="covid19" value="no" ref={register} onClick={()=>{covidAlert=false}}/> No
-                </li>
-                <li>
-                    <label>Illness or Injury <span className="required">*</span></label>
-                    <textarea name="illness" id="field5" className="field-long field-textarea" ref={register}></textarea>
                 </li>
                 <li>
                     <input type="submit" value="Submit" onClick={()=>{
