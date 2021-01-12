@@ -14,16 +14,14 @@ namespace prove.Controllers
     public class SupplyController : ControllerBase
     {
         [HttpGet]
-        public List<Supply> GetAll()
+        public List<SupplyView> GetAll()
         {
-            var listSupplies = new List<Supply>();
+            var listSupplies = new List<SupplyView>();
             // example data
-            var sup1 = new Supply(){
-                Id = 1,
+            var sup1 = new SupplyView(){
                 Name = "Wheelchair"
             };
-            var sup2 = new Supply(){
-                Id = 2,
+            var sup2 = new SupplyView(){
                 Name = "Crutch"
             };
 

@@ -65,7 +65,8 @@ export const CheckingQForm = () => {
                     <select name="severityLevel" className="field-select" ref={register} onChange={(x)=>{
                         if (x.target.value === '5'){
                             emergencyAlert=true
-                        } else{
+                        }
+                        else {
                             emergencyAlert=false
                         }
                     }}>

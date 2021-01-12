@@ -37,25 +37,22 @@ namespace prove.Controllers
         }
         [HttpGet]
         [Route("getAllCurrentPatients")]
-        public List<Patient> GetAllCurrentPatients()
+        public List<PatientView> GetAllCurrentPatients()
         {
-            var allPatients = new List<Patient>();
+            var allPatients = new List<PatientView>();
             // dummy data
-            var p1 = new Patient
+            var p1 = new PatientView
             {
-                Id = 1,
                 FirstName = "Richard",
                 LastName = "Grayson"
             };
-            var p2 = new Patient
+            var p2 = new PatientView
             {
-                Id = 2,
                 FirstName = "Wally",
                 LastName = "West"
             };
-            var p3 = new Patient
+            var p3 = new PatientView
             {
-                Id = 3,
                 FirstName = "Roy",
                 LastName = "Harper"
             };
